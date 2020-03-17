@@ -1,0 +1,255 @@
+* {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+html, body {
+	min-height: 100%;
+	width: 100%;
+}
+
+html {
+	font-size: 62.5%;
+	background: none;
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	height: 100%;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	line-height: 2.4rem;
+}
+
+.wrapper {
+	@include span-columns(12);
+	position: relative;
+	background: #fff;
+	height: 100%;
+	display: inline-block;
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition:  .5s ease-in-out;
+
+	&.slide {
+	 	transform: translate3d( -250px, 0, 0 );
+		-webkit-transform: translate3d( -250px, 0, 0 );
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0.0,0,.4);
+			z-index: 999;
+		}
+	}
+}
+
+.full_width {
+	@include span-columns(12);
+}
+
+a {
+	text-decoration: none;
+	/*@include transition(color 1s ease-in);*/
+	cursor: pointer;
+
+	&:hover {
+        text-decoration: none;
+    }
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+::selection {
+	background: lighten($orange, 5%);
+	opacity: 0.8;
+	color: $white;
+	text-shadow: 0 0 1px $charcoal;
+}
+
+::moz-selection {
+	background: lighten($orange, 5%);
+	opacity: 0.8;
+	color: $white;
+	text-shadow: 0 0 1px $charcoal;
+}
+
+.oldies {
+	background: lighten($charcoal, 20%);
+	color: $white;
+	text-align: center;
+	padding: 1rem 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+	@include media($mobile){
+		font-size: 16px !important;
+	}
+}
+
+
+.button {
+	@include robotoreg;
+	font-size: 16px;
+	padding: 7px 15px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+    cursor: pointer;
+	border: none;
+
+	@include media($tablet){
+		padding: 6px 12px;
+		font-size: 14px;
+	}
+
+	@include media($mobile){
+		padding: 7px 10px;
+		font-size: 12px;
+	}
+
+	@include media($smallMobile){
+		padding: 5px 8px;
+	}
+
+    &:hover {
+        text-decoration: none;
+    }
+
+	&.red {
+		background: $red;
+		color: $white;
+
+		&:hover {
+			background: #c30b21;
+		}
+	}
+}
+
+.form-control {
+    height: 35px;
+    font-size: 16px;
+}
+
+form {
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
+
+	img {
+		width: auto;
+	}
+
+	input[type="text"],input[type="email"] {
+		width: 100%;
+		height: 55px;
+		padding: 0 20px;
+		display: inline-block;
+		font-size: 18px;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		-webkit-border-top-left-radius: 4px;
+		-webkit-border-top-right-radius: 0;
+		-webkit-border-bottom-left-radius: 4px;
+		-webkit-border-bottom-right-radius: 0;
+		-moz-border-radius-bottomleft: 4px;
+		-moz-border-radius-bottomright: 0;
+		-moz-border-radius-topleft: 4px;
+		-moz-border-radius-topright: 0;
+
+		@include media($mobile){
+			font-size: 16px;
+			padding: 10px;
+			height: 41px;
+		}
+
+		@include media($smallMobile){
+			height: 35px;
+		}
+	}
+
+	.submit {
+		width: 20%;
+		display: inline-block;
+
+		@include media($mobile){
+			width: 22%;
+		}
+
+		@include media($smallMobile){
+			width: 23%;
+		}
+	}
+
+	button {
+		@include robotomed;
+		font-size: 20px;
+		width: 100%;
+		color: $white;
+		height: 55px;
+		top: 1px;
+		display: inline-block;
+		margin-left: -9px;
+		background: $red;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		-webkit-border-top-left-radius: 0;
+		-webkit-border-top-right-radius: 4px;
+		-webkit-border-bottom-left-radius: 0;
+		-webkit-border-bottom-right-radius: 4px;
+		-moz-border-radius-bottomleft: 0;
+		-moz-border-radius-bottomright: 4px;
+		-moz-border-radius-topleft: 0;
+		-moz-border-radius-topright: 4px;
+
+		&:hover {
+			background: #c30b21;
+		}
+
+		@include media($mobile){
+			font-size: 14px;
+			height: 41px;
+			top: 0;
+		}
+
+		@include media($smallMobile){
+			font-size: 12px;
+			height: 35px;
+			top: -2px;
+		}
+	}
+}
+
+#cash-app-container {
+	display: none;
+}
+
+.error, #emailError {
+	display:none;
+}
