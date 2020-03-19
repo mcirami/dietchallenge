@@ -14,6 +14,7 @@ p {
 html, body {
 	min-height: 100%;
 	width: 100%;
+	overflow-x: hidden;
 }
 
 html {
@@ -111,27 +112,22 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 
 
 .button {
-	@include robotoreg;
-	font-size: 16px;
-	padding: 7px 15px;
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
+	@include opensansregular;
+	font-size: 20px;
+	padding: 10px 35px;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 45px;
     cursor: pointer;
 	border: none;
+	display:inline-block;
 
 	@include media($tablet){
-		padding: 6px 12px;
-		font-size: 14px;
+		font-size: 18px;
 	}
 
 	@include media($mobile){
-		padding: 7px 10px;
-		font-size: 12px;
-	}
-
-	@include media($smallMobile){
-		padding: 5px 8px;
+		font-size: 16px;
 	}
 
     &:hover {
@@ -192,56 +188,16 @@ form {
 		}
 	}
 
-	.submit {
-		width: 20%;
-		display: inline-block;
-
-		@include media($mobile){
-			width: 22%;
-		}
-
-		@include media($smallMobile){
-			width: 23%;
-		}
-	}
-
 	button {
-		@include robotomed;
 		font-size: 20px;
 		width: 100%;
 		color: $white;
-		height: 55px;
-		top: 1px;
 		display: inline-block;
-		margin-left: -9px;
 		background: $red;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		border-top-right-radius: 4px;
-		border-bottom-right-radius: 4px;
-		-webkit-border-top-left-radius: 0;
-		-webkit-border-top-right-radius: 4px;
-		-webkit-border-bottom-left-radius: 0;
-		-webkit-border-bottom-right-radius: 4px;
-		-moz-border-radius-bottomleft: 0;
-		-moz-border-radius-bottomright: 4px;
-		-moz-border-radius-topleft: 0;
-		-moz-border-radius-topright: 4px;
 
-		&:hover {
-			background: #c30b21;
-		}
 
 		@include media($mobile){
 			font-size: 14px;
-			height: 41px;
-			top: 0;
-		}
-
-		@include media($smallMobile){
-			font-size: 12px;
-			height: 35px;
-			top: -2px;
 		}
 	}
 }
@@ -252,4 +208,28 @@ form {
 
 .error, #emailError {
 	display:none;
+}
+
+.video_wrapper {
+	@include span-columns(12);
+	padding-bottom: 56.25%;
+	height: 0;
+	position: relative;
+	cursor: pointer;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&.video_notation {
+		padding-bottom: 124.25%;
+
+		@include media($mobile) {
+			padding-bottom: 175.25%;
+		}
+	}
 }

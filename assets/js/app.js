@@ -12,6 +12,12 @@ jQuery(document).ready(function($) {
 			$('#cash-app-container').hide();
 			$('.submit_wrap').hide();
 		}
+
+		$('.form-check').removeClass('active');
+
+		if($(this).is(':checked')) {
+			$(this).parent().addClass('active');
+		}
 	});
 
 

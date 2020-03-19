@@ -16,18 +16,25 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 ?>
 <main class="wrapper">
 
-		<section class="row">
-			<div class="col-12">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/hero-image.jpg" alt="buddy system weight loss challenge">
+		<section class="row hero">
+			<div class="col-12 col-md-6 mr-auto text-center">
+				<h3>"I feel beautiful and free as the water flowing down these rocks when I'm attempting to achieve my weight loss goals"</h3>
+				<h2 class="text-uppercase my-3 my-md-5">Hello Buddies!</h2>
+				<img class="w-25 d-block mx-auto" src="<?php echo bloginfo( 'template_url' ); ?>/images/logo-30-days.png" alt="waterfall"/>
+				<h4 class="text-uppercase my-4">Buddy System</h4>
+				<h4 class="red text-uppercase mb-3">Weight Loss</h4>
+				<h2 class="text-uppercase no_italics">Challenge</h2>
 			</div>
 		</section>
 
-		<section class="row">
+		<section class="row intro_section">
 			<article class="col-12">
 				<div class="container">
 					<div class="row">
-						<div class="col-8 mx-auto py-5">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/video-placeholer.jpg"/>
+						<div class="col-6 mx-auto py-5">
+							<div class="video_wrapper">
+								<iframe src="https://www.youtube.com/embed/i3CuqiJ0k4A" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -42,33 +49,37 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 						</div>
 					</div> <!-- text row -->
 					<div class="row images">
-						<img class="position-absolute top w-auto ribbon_img" src="<?php echo bloginfo( 'template_url' ); ?>/images/ribbon.png"/>
+						<img class="position-absolute top ribbon_img" src="<?php echo bloginfo( 'template_url' ); ?>/images/ribbon.png"/>
 						<div class="col-5 mx-auto">
 							<div class="row images_wrap left">
-								<div class="col-6 mx-auto">
+								<div class="col-6 pr-1 pr-md-2 mx-auto">
 									<img src="<?php echo bloginfo( 'template_url' ); ?>/images/front-before.jpg"/>
+									<p>Before</p>
 								</div>
-								<div class="col-6 mx-auto">
+								<div class="col-6 pl-1 pl-md-2 mx-auto">
 									<img src="<?php echo bloginfo( 'template_url' ); ?>/images/front-after.jpg"/>
+									<p class="after">After</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-5 mx-auto">
 							<div class="row images_wrap right">
-								<div class="col-6 mx-auto">
+								<div class="col-6 pr-1 pr-md-2 mx-auto">
 									<img src="<?php echo bloginfo( 'template_url' ); ?>/images/side-before.jpg"/>
+									<p>Before</p>
 								</div>
-								<div class="col-6 mx-auto">
+								<div class="col-6 pl-1 pl-md-2 mx-auto">
 									<img src="<?php echo bloginfo( 'template_url' ); ?>/images/side-after.jpg"/>
+									<p class="after">After</p>
 								</div>
 							</div>
 						</div>
 					</div> <!-- images row -->
-					<div class="row">
+					<div class="row images_text">
 						<div class="col-12 text-center">
-							<h2>Want to lost 15 Pounds</h2>
+							<h2>Want to lose 15 Pounds?</h2>
 							<p>Join our 30-day weight loss challenge!</p>
-							<a class="button red" href="#payment_form">Join Now</a>
+							<a class="button red mt-2 mt-md-3 w-25" href="#payment_form">Join Now</a>
 						</div>
 					</div>
 				</div>
@@ -76,62 +87,66 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 		</section>
 		<section id="payment_form">
 			<div class="container">
-				<div class="row">
-					<div class="col-6">
+				<div class="row d-flex justify-content-center align-content-center flex-row">
+					<div class="col-12 col-md-6 d-flex flex-column px-4 pr-md-5 pl-md-0 mb-5 my-md-auto">
 						<h2>Payment Methods</h2>
 						<h3>Once materials are emailed, no refund will be permitted.</h3>
 						<p>
 							<span>It is currently not possible to pay with CashApp online.</span> However, if you would like to pay with CashApp, Select CashApp at the top of the form on the right, submit your information then send $20 to Username: Whatever.
 						</p>
-						<p>
-							<span>IMPORTANT: Please don't forget to include your email in the notes when you send your payment so I know that you have paid.</span>
-						</p>
 					</div>
-					<div class="col-6">
+					<div class="col-12 col-md-6 d-flex flex-column my-auto px-4 px-md-0">
 						<?php if ($paymentType == "") : ?>
 							<form id="myForm" name="myForm" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
 
-								<input type="hidden" name="action" value="info_submit_form">
-								<input type="hidden" name="paymentType" value="cashapptype" id="payment_type">
-								<div class="form-group">
-									<label for="name">Name</label>
-									<input type="text" class="form-control" id="name" name="name">
-									<div class="error">
-										<p>Please enter your name</p>
+								<div class="form-group tabs">
+									<div class="form-check m-0 active form-check-inline">
+										<input class="form-check-input paypal" type="radio" name="paymentOptions" id="paypal" value="paypal" checked hidden>
+										<label class="form-check-label" for="paypal"><img src="<?php echo bloginfo( 'template_url' ); ?>/images/logo-paypal.png" alt="paypal logo"/></label>
 									</div>
-								</div>
-								<div class="form-group">
-									<label for="email">Email address</label>
-									<input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
-									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-									<div id="emailError">
-										<p>Please enter a valid email address.</p>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="form-check form-check-inline">
-										<input class="form-check-input paypal" type="radio" name="paymentOptions" id="paypal" value="paypal" checked>
-										<label class="form-check-label" for="paypal">Pay With PayPal</label>
-									</div>
-									<div class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="paymentOptions"  id="cashapp" value="cashapp">
-										<label class="form-check-label" for="cashapp">Pay With CashApp</label>
+									<div class="form-check cashapp m-0 form-check-inline">
+										<input class="form-check-input" type="radio" name="paymentOptions"  id="cashapp" value="cashapp" hidden>
+										<label class="form-check-label" for="cashapp"><img src="<?php echo bloginfo( 'template_url' ); ?>/images/logo-cashapp.png" alt="cash app logo"/></label>
 									</div>
 								</div>
 
-								<div class="form-group submit_wrap">
-									<button type="submit" class="btn btn-primary">Submit</button>
-								</div>
+								<div class="row input_wrap">
+									<div class="col-12">
+										<input type="hidden" name="action" value="info_submit_form">
+										<input type="hidden" name="paymentType" value="cashapptype" id="payment_type">
+										<div class="form-group">
+											<label for="name">Name</label>
+											<input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+											<div class="error my-4">
+												<p>Please enter your name</p>
+											</div>
+										</div>
+										<div class="form-group mt-4">
+											<label class="mb-0" for="email">E-mail address</label><br>
+											<small id="emailHelp" class="form-text text-muted">You must include a valid email before clicking on payment button.</small>
+											<input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter Your Email Address">
+											<div id="emailError" class="my-4">
+												<p>Please enter a valid email address.</p>
+											</div>
+											<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+										</div>
+
+										<div class="form-group submit_wrap">
+											<button type="submit" class="button red my-4">Submit</button>
+											<h4>
+												<span>IMPORTANT: Please don't forget to include your email in the notes when you send your payment with CashApp so I know that you have paid.</span>
+											</h4>
+										</div>
 
 
 
-								<section class="payment_container">
-									<div class="paypal payment" id="paypal-button-container"></div>
+										<section class="payment_container">
+											<div class="paypal payment mt-4" id="paypal-button-container"></div>
 
-									<div id="cash-app-container" class="cashapp payment">
-										<p>You have selected the cash app method</p>
+											<div id="cash-app-container" class="cashapp payment"></div>
+										</section>
 									</div>
-								</section>
+								</div>
 
 								<script>
 
@@ -230,41 +245,57 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 			</div><!-- container -->
 		</section>
 
-		<section>
+		<section class="success_stories text-center">
 			<div class="container">
 				<div class="row">
-					<article class="col-6 mx-auto my-5 text-center">
-						<h2>Success Stories</h2>
+					<div class="col-12">
+						<h2 class="mb-4">Success Stories</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5 mx-auto">
 						<img src="<?php echo bloginfo( 'template_url' ); ?>/images/video-placeholer-success.jpg"/>
-						<h3>George Jetson</h3>
-					</article>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h3 class="mt-4">George Jetson</h3>
+					</div>
 				</div>
 			</div>
 		</section>
 
 		<section class="book_section">
 			<div class="container">
-				<div class="row">
-					<div class="col-6">
-						<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere inventore nam optio! Dicta eaque eligendi nemo nobis obcaecati officia</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid at commodi corporis dignissimos dolor ea fugit iusto labore modi nemo nesciunt officia quia quisquam, reiciendis reprehenderit sequi sit voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam atque ducimus eius eos harum inventore laudantium pariatur, provident, quisquam reprehenderit sit suscipit tempora. Ad aliquam doloribus earum perspiciatis quaerat..</p>
-						<a class="button red" href="#payment_form">Download Now</a>
+				<div class="row d-flex justify-content-center align-content-center flex-row">
+					<div class="col-12 col-md-6 d-flex flex-column mb-5 my-md-auto py-5 py-md-0">
+						<h2 class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere inventore nam optio! Dicta eaque eligendi nemo nobis obcaecati officia</h2>
+						<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid at commodi corporis dignissimos dolor ea fugit iusto labore modi nemo nesciunt officia quia quisquam, reiciendis reprehenderit sequi sit voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam atque ducimus eius eos harum inventore laudantium pariatur, provident, quisquam reprehenderit sit suscipit tempora. Ad aliquam doloribus earum perspiciatis quaerat..</p>
+						<a class="button red w-50 text-center mx-auto mx-md-0" href="#payment_form">Download Now</a>
 					</div>
-					<div class="col-6 text-center">
-						<img class="w-auto mx-auto" src="<?php echo bloginfo( 'template_url' ); ?>/images/book-cover.png"/>
+					<div class="col-4 col-md-6 text-center d-flex flex-column my-auto">
+						<img class="mx-auto" src="<?php echo bloginfo( 'template_url' ); ?>/images/book-cover.png"/>
 					</div>
 				</div>
 			</div>
 		</section><!-- book_section -->
 
-		<section>
+		<section class="daily_thoughts text-center">
 			<div class="container">
 				<div class="row">
-					<article class="col-6 mx-auto my-5 text-center">
-						<h2>Daily Fitness Thoughts</h2>
+					<div class="col-12">
+						<h2 class="mb-4">Daily Fitness Thoughts</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-5 mx-auto">
 						<img src="<?php echo bloginfo( 'template_url' ); ?>/images/video-placeholer-success.jpg"/>
-						<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, molestiae, optio. Adipis</h3>
-					</article>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-9 col-md-6 mx-auto">
+						<h3 class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, molestiae, optio. Adipis</h3>
+					</div>
 				</div>
 			</div>
 		</section><!-- daily thoughts section -->

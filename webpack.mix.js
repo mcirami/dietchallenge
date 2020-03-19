@@ -12,7 +12,8 @@ const mix = require('laravel-mix');
  */
 
 
-mix.js('assets/js/app.js', 'js/app.js')
+mix.options({processCssUrls: false})
+    .js('assets/js/app.js', 'js/app.js')
     .sass('assets/sass/app.scss', 'css/app.css')
     .minify('js/app.js', 'js')
     .minify('css/app.css', 'css')

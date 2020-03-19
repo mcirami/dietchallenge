@@ -1,6 +1,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
+		<meta name="google-site-verification" content="eC8IprBiKGVVYLsb9tTBtfcIrY7xKmJNWDJZWBSRQmE" />
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
@@ -31,13 +32,13 @@
 			<div class="container">
 
 			<!-- header -->
-			<header class="header clear row py-5" role="banner">
+			<header class="header clear row py-4 py-md-5" role="banner">
 				<div class="col-12">
 					<!-- logo -->
-					<div class="logo w-auto float-left">
+					<div class="logo w-auto float-none float-md-left">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" alt="Logo" class="logo-img w-auto m-auto">
 						</a>
 					</div>
 					<!-- /logo -->

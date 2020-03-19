@@ -29,62 +29,43 @@
 	transform: translateX(-50%);
 }
 
-@mixin calvertbold {
-    font-family: 'calvertmtbold2', sans-serif;
+@mixin poppinsbold {
+    font-family: 'poppinsbold', sans-serif;
     font-weight: 700;
 }
 
-@mixin poiretreg {
-    font-family: 'poiretoneregular', sans-serif;
-    font-weight: 300;
+@mixin poppinsextrabold {
+    font-family: 'poppinsextrabold', sans-serif;
+    font-weight: 800;
 }
 
-@mixin robotoblack {
-    font-family: 'robotoblack', sans-serif;
-    font-weight: 400;
-}
-
-@mixin robotoblit {
-    font-family: 'robotoblackitalic', sans-serif;
-    font-weight: 400;
-}
-
-@mixin robotobold {
-    font-family: 'robotobold', sans-serif;
-    font-weight: 700;
-}
-
-@mixin robotoboldit {
-    font-family: 'robotobolditalic', sans-serif;
-    font-weight: 700;
-}
-
-@mixin robotoit {
-    font-family: 'robotoitalic', sans-serif;
-    font-weight: 400;
-}
-
-@mixin robotolight {
-    font-family: 'robotolight', sans-serif;
-    font-weight: 200;
-}
-
-@mixin robotolightit {
-    font-family: 'robotolightitalic', sans-serif;
-    font-weight: 200;
-}
-
-@mixin robotomed {
-    font-family: 'robotomedium', sans-serif;
+@mixin poppinsmedium {
+    font-family: 'poppinsmedium', sans-serif;
     font-weight: 500;
 }
 
-@mixin robotomedit {
-    font-family: 'robotomediumitalic', sans-serif;
-    font-weight: 500;
+@mixin poppinsregular {
+    font-family: 'poppinsregular', sans-serif;
+    font-weight: 300;
 }
 
-@mixin robotoreg {
-    font-family: 'robotoregular', sans-serif;
+@mixin poppinssemibold {
+    font-family: 'poppinssemibold', sans-serif;
+    font-weight: 600;
+}
+
+@mixin sairabold {
+    font-family: 'sairabold', sans-serif;
+    font-weight: 700;
+}
+
+@mixin opensansregular {
+    font-family: 'opensansregular', sans-serif;
     font-weight: 300;
+}
+
+@mixin opensanssemibold {
+    font-family: 'opensanssemibold', sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }

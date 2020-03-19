@@ -1,47 +1,381 @@
 header	{
 	background: $white;
+
+	a {
+		display: block;
+	}
 }
 
 .wrapper{
 	@include span-columns(12);
 
-	.ribbon_img {
-		left: 50%;
-		z-index: 2;
-		transform: rotate(8deg);
-		top: 0px;
-		margin-left: -8%;
+	.hero {
+		background: url('../images/waterfall.jpg') no-repeat;
+		background-size: cover;
+		background-position: center 20%;
+		color: $white;
+
+		& > div {
+			padding: 40px;
+			background: rgba(0,0,0,.7);
+		}
+
+		h3 {
+			@include poppinssemibold;
+			padding: 0 10%;
+
+			@include media($mobile) {
+				padding: 0 5%;
+				font-size: 14px;
+			}
+		}
+
+		h2 {
+			@include sairabold;
+			font-style: italic;
+			font-size: 45px;
+
+			@include media($mobile) {
+				font-size: 34px;
+			}
+
+			&.no_italics {
+				@include poppinsextrabold;
+				font-style: normal;
+				line-height: 1.2;
+				font-size: 42px;
+
+				@include media($mobile) {
+					font-size: 37px;
+				}
+			}
+		}
+
+		h4 {
+			font-size: 34px;
+
+			@include media($mobile) {
+				font-size: 30px;
+			}
+
+			&.red {
+				font-size: 39px;
+				color: $red;
+
+				@include media($mobile) {
+					font-size: 34px;
+				}
+			}
+		}
 	}
 
-	.images {
+	.intro_section {
+
+		.ribbon_img {
+			left: 50%;
+			z-index: 2;
+			transform: rotate(8deg);
+			top: 0;
+			margin-left: -8%;
+			width: auto;
+
+			@include media($mobile) {
+				top: -12px;
+				margin-left: -10%;
+				width: 92px;
+			}
+		}
+
+		.images {
+			margin-top: 60px;
+
+			@include media($mobile) {
+				margin-top: 30px;
+			}
+		}
+
+		p span {
+			@include poppinsbold;
+			color: $red;
+
+			@include media($mobile) {
+				font-size: 14px;
+			}
+		}
+
+		.images_wrap {
+			z-index: 1;
+			transform: rotate(-5deg);
+			-moz-transform: rotate(-5deg);
+			-ms-transform: rotate(-5deg);
+			-o-transform-origin: rotate(-5deg);
+			-webkit-transform: rotate(-5deg);
+			border-top: 10px solid $white;
+			border-bottom: 10px solid $white;
+			border-right: 5px solid $white;
+			border-left: 5px solid $white;
+			-webkit-box-shadow: 0px 0px 33px -6px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 33px -6px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 33px -6px rgba(0,0,0,0.75);
+
+			@include media($mobile) {
+				border-top-width: 5px;
+				border-bottom-width: 5px;
+				border-left-width: 0;
+				border-right-width: 0;
+			}
+
+			&.right {
+				transform: rotate(5deg);
+				-moz-transform: rotate(5deg);
+				-ms-transform: rotate(5deg);
+				-o-transform-origin: rotate(5deg);
+				-webkit-transform: rotate(5deg);
+			}
+
+			p {
+				@include opensanssemibold;
+				position: absolute;
+				left: 8px;
+				bottom: -10px;
+				background:$white;
+				color:$black;
+				padding: 5px 20px 5px 5px;
+				line-height: 1.6;
+
+				@include media($mobile) {
+					font-size: 10px;
+					padding: 2px 15px 2px 5px;
+				}
+
+				&.after {
+					margin-left: -3px;
+
+					@include media($mobile) {
+						margin-left: -5px;
+					}
+				}
+			}
+		}
+
+		.images_text {
+
+			h2 {
+				font-size: 32px;
+				margin-top: 20px;
+
+				@include media($mobile) {
+					font-size: 24px;
+				}
+			}
+
+			p {
+				@include media($mobile) {
+					font-size: 14px;
+				}
+			}
+
+			a {
+				@include media($mobile) {
+					width: 50% !important;
+				}
+			}
+
+		}
+	}
+
+	#payment_form {
 		margin-top: 60px;
+		background: url("../images/payment-background.jpg") no-repeat;
+		background-size: cover;
+		color: $white;
+		padding: 40px 0;
+
+		#emailError {
+			@include opensanssemibold;
+			font-size: 14px;
+			color: $red;
+		}
+
+		label {
+			@include poppinsregular;
+			line-height: 1;
+		}
+
+		h2 {
+			font-size: 34px;
+
+			@include media($mobile) {
+				font-size: 28px;
+			}
+
+			&:after {
+				content:'';
+				background: url("../images/arrow.png") no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: -37px;
+				right: 38px;
+				width: 162px;
+				height: 55px;
+
+				@include media($mobile) {
+					content: none;
+				}
+			}
+		}
+
+		h3 {
+			font-size: 20px;
+			line-height: 1.6;
+			margin-bottom: 20px;
+
+			@include media($mobile) {
+				font-size: 16px;
+			}
+		}
+
+		h4 {
+			@include opensanssemibold;
+			font-size: 14px;
+			color: $red;
+		}
+
+		p {
+			font-size: 12px;
+
+			span {
+				color: $purple;
+			}
+		}
+
+		#myForm {
+			background: $white;
+			color: $black;
+			height: 550px;
+
+			.input_wrap {
+				padding: 20px;
+			}
+
+			iframe {
+				min-height: 250px;
+			}
+
+			.form-check {
+				width: 49%;
+				padding: 0;
+
+				&.active {
+					border-bottom: 3px solid $black;
+					border-right: 1px solid $black;
+
+					&.cashapp {
+						border-left: 1px solid $black;
+						border-right: none;
+					}
+				}
+
+				.form-check-label {
+					padding: 10px;
+					width: 100%;
+					text-align: center;
+
+					img {
+						margin: auto;
+					}
+				}
+
+			}
+
+			.form-group.tabs {
+				background: $lightPurple;
+			}
+
+			.form-check-input {
+				border-radius: 0;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background: none;
+				border: none;
+			}
+		}
 	}
 
-	.images_wrap {
-		z-index: 1;
-		transform: rotate(-5deg);
-		-moz-transform: rotate(-5deg);
-		-ms-transform: rotate(-5deg);
-		-o-transform-origin: rotate(-5deg);
-		-webkit-transform: rotate(-5deg);
-		border-top: 10px solid $white;
-		border-bottom: 10px solid $white;
-		border-right: 5px solid $white;
-		border-left: 5px solid $white;
-		-webkit-box-shadow: 0px 0px 33px -6px rgba(0,0,0,0.75);
-		-moz-box-shadow: 0px 0px 33px -6px rgba(0,0,0,0.75);
-		box-shadow: 0px 0px 33px -6px rgba(0,0,0,0.75);
+	.success_stories {
+		padding: 40px 0;
 
-		&.right {
-			transform: rotate(5deg);
-			-moz-transform: rotate(5deg);
-			-ms-transform: rotate(5deg);
-			-o-transform-origin: rotate(5deg);
-			-webkit-transform: rotate(5deg);
+		h2 {
+			font-size: 32px;
+
+			@include media($mobile) {
+				font-size: 26px;
+			}
+		}
+
+		h3 {
+			@include poppinsmedium;
+			color: $red;
+		}
+
+	}
+
+	.book_section {
+		background: url('../images/book-background.jpg') no-repeat;
+		background-size: cover;
+		padding: 40px 0;
+		color: $white;
+
+		img {
+			width: auto;
+
+			@include media($mobile) {
+				width: 100%;
+			}
+		}
+	}
+
+	.daily_thoughts {
+		padding: 40px 0;
+
+		h2 {
+			font-size: 32px;
+
+			@include media($mobile) {
+				font-size: 26px;
+			}
+		}
+
+		h3 {
+			color: $gray;
+			font-size: 18px;
+			line-height: 1.4;
+
+			&:before {
+				content: '';
+				background: url('../images/quotes.png') no-repeat;
+				position: absolute;
+				left: -34px;
+				top: 0;
+				width: 45px;
+				height: 40px;
+				background-size: 100%;
+
+				@include media($mobile) {
+					width: 40px;
+					height: 35px;
+				}
+			}
 		}
 	}
 }
 
 footer {
-	margin-top: 200px;
+	background: $black;
+	color: $white;
+	margin-top: 60px;
+	padding: 40px 0;
+	line-height: 1.4;
+	font-size: 12px;
 }
