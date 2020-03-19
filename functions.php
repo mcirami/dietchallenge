@@ -118,7 +118,7 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.min.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
 
@@ -492,14 +492,6 @@ function prefix_send_email_to_admin() {
 		die();
 	}
 
-	//$_SERVER['HTTP_REFERER']
-
-
-
-
-	// Generate email content
-
-	// Send to appropriate email
 }
 add_action( 'admin_post_nopriv_info_submit_form', 'prefix_send_email_to_admin' );
 add_action('admin_post_info_submit_form', 'prefix_send_email_to_admin');

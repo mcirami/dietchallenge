@@ -24,7 +24,7 @@ header	{
 			@include poppinssemibold;
 			padding: 0 10%;
 
-			@include media($mobile) {
+			@include media($tablet) {
 				padding: 0 5%;
 				font-size: 14px;
 			}
@@ -34,6 +34,10 @@ header	{
 			@include sairabold;
 			font-style: italic;
 			font-size: 45px;
+
+			@include media($tablet) {
+				font-size: 38px;
+			}
 
 			@include media($mobile) {
 				font-size: 34px;
@@ -45,8 +49,8 @@ header	{
 				line-height: 1.2;
 				font-size: 42px;
 
-				@include media($mobile) {
-					font-size: 37px;
+				@include media($tablet) {
+					font-size: 38px;
 				}
 			}
 		}
@@ -54,7 +58,7 @@ header	{
 		h4 {
 			font-size: 34px;
 
-			@include media($mobile) {
+			@include media($tablet) {
 				font-size: 30px;
 			}
 
@@ -62,8 +66,8 @@ header	{
 				font-size: 39px;
 				color: $red;
 
-				@include media($mobile) {
-					font-size: 34px;
+				@include media($tablet) {
+					font-size: 35px;
 				}
 			}
 		}
@@ -74,14 +78,21 @@ header	{
 		.ribbon_img {
 			left: 50%;
 			z-index: 2;
-			transform: rotate(8deg);
 			top: 0;
-			margin-left: -8%;
+			margin-left: -7%;
 			width: auto;
+
+			@include media($desktop) {
+				margin-left: -7.5%;
+				width: 146px;
+			}
+			@include media($tablet) {
+				width: 105px;
+			}
 
 			@include media($mobile) {
 				top: -12px;
-				margin-left: -10%;
+				margin-left: -9%;
 				width: 92px;
 			}
 		}
@@ -94,12 +105,14 @@ header	{
 			}
 		}
 
-		p span {
-			@include poppinsbold;
-			color: $red;
-
-			@include media($mobile) {
+		p {
+			@include media($tablet) {
 				font-size: 14px;
+			}
+
+			span {
+				@include poppinsbold;
+				color: $red;
 			}
 		}
 
@@ -164,7 +177,7 @@ header	{
 				font-size: 32px;
 				margin-top: 20px;
 
-				@include media($mobile) {
+				@include media($tablet) {
 					font-size: 24px;
 				}
 			}
@@ -219,6 +232,16 @@ header	{
 				width: 162px;
 				height: 55px;
 
+				@include media($desktop) {
+					top: -62px;
+					right: -4%;
+				}
+
+				@include media($tablet) {
+					top: -64px;
+					right: -18px;
+				}
+
 				@include media($mobile) {
 					content: none;
 				}
@@ -236,9 +259,14 @@ header	{
 		}
 
 		h4 {
-			@include opensanssemibold;
+			@include poppinsbold;
 			font-size: 14px;
 			color: $red;
+
+			span {
+				@include poppinsextrabold;
+				color: $black;
+			}
 		}
 
 		p {
@@ -247,12 +275,17 @@ header	{
 			span {
 				color: $purple;
 			}
+
+			&.red {
+				@include poppinsbold;
+				color: $red;
+			}
 		}
 
 		#myForm {
 			background: $white;
 			color: $black;
-			height: 550px;
+			min-height: 550px;
 
 			.input_wrap {
 				padding: 20px;
@@ -328,10 +361,17 @@ header	{
 		color: $white;
 
 		img {
-			width: auto;
+			width: 55%;
 
 			@include media($mobile) {
 				width: 100%;
+			}
+		}
+
+		p {
+			span {
+				@include poppinsbold;
+				color: $red;
 			}
 		}
 	}

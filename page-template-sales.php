@@ -33,7 +33,8 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 					<div class="row">
 						<div class="col-6 mx-auto py-5">
 							<div class="video_wrapper">
-								<iframe src="https://www.youtube.com/embed/i3CuqiJ0k4A" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+								<?php /*echo do_shortcode("[advanced_iframe src='https://www.youtube.com/embed/i3CuqiJ0k4A']"); */?>
+								<iframe src="https://www.youtube.com/embed/i3CuqiJ0k4A" frameborder="0" allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>
@@ -41,7 +42,7 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 						<div class="col-12 text-center">
 							<p class="px-4">
 								Greetings Future Buddy's! Will you join me in a <span>30-day weight loss challenge?</span> The plan is super simple and easy to follow. You can begin your challenge at anytime. Many Buddy's have reported <span>losing up to 15 pounds</span>. Are you up for the challenge? I sure hope so!
-								You can begin this challenge once you send a one time payment of $20.00 to CashApp or PayPal along with submitting your email. Upon receipt <span>I will perosnally email the information material</span> to begin the challenge. You will also receive an invite to the private Facebook group for Buddy Sytem Weight Loss Challenge.
+								You can begin this challenge once you <span>send a one time payment of $20.00</span> to CashApp or PayPal along with submitting your email. Upon receipt <span>I will perosnally email the information material</span> to begin the challenge. You will also receive an invite to the private Facebook group for Buddy Sytem Weight Loss Challenge.
 							</p>
 							<p>
 								Remember there are no diet pills, drinks, smoothies or mixtures. All you need is plain everyday food from the grocery store.
@@ -77,7 +78,7 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 					</div> <!-- images row -->
 					<div class="row images_text">
 						<div class="col-12 text-center">
-							<h2>Want to lose 15 Pounds?</h2>
+							<h2>Want to lose up to 15 Pounds?</h2>
 							<p>Join our 30-day weight loss challenge!</p>
 							<a class="button red mt-2 mt-md-3 w-25" href="#payment_form">Join Now</a>
 						</div>
@@ -92,7 +93,10 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 						<h2>Payment Methods</h2>
 						<h3>Once materials are emailed, no refund will be permitted.</h3>
 						<p>
-							<span>It is currently not possible to pay with CashApp online.</span> However, if you would like to pay with CashApp, Select CashApp at the top of the form on the right, submit your information then send $20 to Username: Whatever.
+							<span>It is currently not possible to pay with CashApp online.</span> However, if you would like to pay with CashApp, Select CashApp at the top of the form on the right, submit your information then send $20 to Username: <span>$desi800</span>.
+						</p>
+						<p class="red">
+							Disclaimer: Results may vary, consult your physician before beginning, no refunds after start up materials are emailed, no liablity.
 						</p>
 					</div>
 					<div class="col-12 col-md-6 d-flex flex-column my-auto px-4 px-md-0">
@@ -134,11 +138,9 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 										<div class="form-group submit_wrap">
 											<button type="submit" class="button red my-4">Submit</button>
 											<h4>
-												<span>IMPORTANT: Please don't forget to include your email in the notes when you send your payment with CashApp so I know that you have paid.</span>
+												<span>IMPORTANT:</span> After Submitting The Form, Send Your <span>$20.00 Payment</span> to CashApp Username: <span>$desi800</span> Please don't forget to include your email in the notes when you send your payment or you may not receive your information.
 											</h4>
 										</div>
-
-
 
 										<section class="payment_container">
 											<div class="paypal payment mt-4" id="paypal-button-container"></div>
@@ -269,9 +271,38 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 			<div class="container">
 				<div class="row d-flex justify-content-center align-content-center flex-row">
 					<div class="col-12 col-md-6 d-flex flex-column mb-5 my-md-auto py-5 py-md-0">
-						<h2 class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere inventore nam optio! Dicta eaque eligendi nemo nobis obcaecati officia</h2>
-						<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid at commodi corporis dignissimos dolor ea fugit iusto labore modi nemo nesciunt officia quia quisquam, reiciendis reprehenderit sequi sit voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam atque ducimus eius eos harum inventore laudantium pariatur, provident, quisquam reprehenderit sit suscipit tempora. Ad aliquam doloribus earum perspiciatis quaerat..</p>
-						<a class="button red w-50 text-center mx-auto mx-md-0" href="#payment_form">Download Now</a>
+						<h2 class="mb-4">Let's rev up and get excited about this and change the globe one buddy at a time!</h2>
+						<p class="mb-4">
+							For <span>only $20</span> potential buddies will receive the following materials for success during the challenge:
+						</p>
+						<ol>
+							<li>
+								<p>
+									A detailed food item list.
+								</p>
+							</li>
+							<li>
+								<p>
+									A A 4 week Monday through Friday easy to perform exercise plan.
+								</p>
+							</li>
+							<li>
+								<p>
+									Step-by-Step Instructions
+								</p>
+							</li>
+							<li>
+								<p>
+									An invitation to the private Facebook support group.
+								</p>
+							</li>
+							<li>
+								<p>
+									A weekly inspirational buddy talk.
+								</p>
+							</li>
+						</ol>
+						<a class="button red w-50 text-center mx-auto mx-md-0" href="#payment_form">Get Yours Now!</a>
 					</div>
 					<div class="col-4 col-md-6 text-center d-flex flex-column my-auto">
 						<img class="mx-auto" src="<?php echo bloginfo( 'template_url' ); ?>/images/book-cover.png"/>
@@ -284,7 +315,7 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h2 class="mb-4">Daily Fitness Thoughts</h2>
+						<h2 class="mb-4">Weekly Buddy Talk</h2>
 					</div>
 				</div>
 				<div class="row">

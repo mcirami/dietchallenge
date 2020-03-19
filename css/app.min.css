@@ -10794,7 +10794,7 @@ header a {
   font-weight: 600;
   padding: 0 10%;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .wrapper .hero h3, .wrapper .hero .h3 {
     padding: 0 5%;
     font-size: 14px;
@@ -10805,6 +10805,11 @@ header a {
   font-weight: 700;
   font-style: italic;
   font-size: 45px;
+}
+@media screen and (max-width: 991px) {
+  .wrapper .hero h2, .wrapper .hero .h2 {
+    font-size: 38px;
+  }
 }
 @media screen and (max-width: 767px) {
   .wrapper .hero h2, .wrapper .hero .h2 {
@@ -10818,15 +10823,15 @@ header a {
   line-height: 1.2;
   font-size: 42px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .wrapper .hero h2.no_italics, .wrapper .hero .no_italics.h2 {
-    font-size: 37px;
+    font-size: 38px;
   }
 }
 .wrapper .hero h4, .wrapper .hero .h4 {
   font-size: 34px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .wrapper .hero h4, .wrapper .hero .h4 {
     font-size: 30px;
   }
@@ -10835,23 +10840,33 @@ header a {
   font-size: 39px;
   color: #ed1b2e;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .wrapper .hero h4.red, .wrapper .hero .red.h4 {
-    font-size: 34px;
+    font-size: 35px;
   }
 }
 .wrapper .intro_section .ribbon_img {
   left: 50%;
   z-index: 2;
-  transform: rotate(8deg);
   top: 0;
-  margin-left: -8%;
+  margin-left: -7%;
   width: auto;
+}
+@media screen and (max-width: 1199px) {
+  .wrapper .intro_section .ribbon_img {
+    margin-left: -7.5%;
+    width: 146px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .wrapper .intro_section .ribbon_img {
+    width: 105px;
+  }
 }
 @media screen and (max-width: 767px) {
   .wrapper .intro_section .ribbon_img {
     top: -12px;
-    margin-left: -10%;
+    margin-left: -9%;
     width: 92px;
   }
 }
@@ -10863,15 +10878,15 @@ header a {
     margin-top: 30px;
   }
 }
+@media screen and (max-width: 991px) {
+  .wrapper .intro_section p {
+    font-size: 14px;
+  }
+}
 .wrapper .intro_section p span {
   font-family: "poppinsbold", sans-serif;
   font-weight: 700;
   color: #ed1b2e;
-}
-@media screen and (max-width: 767px) {
-  .wrapper .intro_section p span {
-    font-size: 14px;
-  }
 }
 .wrapper .intro_section .images_wrap {
   z-index: 1;
@@ -10931,7 +10946,7 @@ header a {
   font-size: 32px;
   margin-top: 20px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .wrapper .intro_section .images_text h2, .wrapper .intro_section .images_text .h2 {
     font-size: 24px;
   }
@@ -10983,6 +10998,18 @@ header a {
   width: 162px;
   height: 55px;
 }
+@media screen and (max-width: 1199px) {
+  .wrapper #payment_form h2:after, .wrapper #payment_form .h2:after {
+    top: -62px;
+    right: -4%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .wrapper #payment_form h2:after, .wrapper #payment_form .h2:after {
+    top: -64px;
+    right: -18px;
+  }
+}
 @media screen and (max-width: 767px) {
   .wrapper #payment_form h2:after, .wrapper #payment_form .h2:after {
     content: none;
@@ -10999,11 +11026,15 @@ header a {
   }
 }
 .wrapper #payment_form h4, .wrapper #payment_form .h4 {
-  font-family: "opensanssemibold", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+  font-family: "poppinsbold", sans-serif;
+  font-weight: 700;
   font-size: 14px;
   color: #ed1b2e;
+}
+.wrapper #payment_form h4 span, .wrapper #payment_form .h4 span {
+  font-family: "poppinsextrabold", sans-serif;
+  font-weight: 800;
+  color: #000000;
 }
 .wrapper #payment_form p {
   font-size: 12px;
@@ -11011,10 +11042,15 @@ header a {
 .wrapper #payment_form p span {
   color: #b78af1;
 }
+.wrapper #payment_form p.red {
+  font-family: "poppinsbold", sans-serif;
+  font-weight: 700;
+  color: #ed1b2e;
+}
 .wrapper #payment_form #myForm {
   background: #ffffff;
   color: #000000;
-  height: 550px;
+  min-height: 550px;
 }
 .wrapper #payment_form #myForm .input_wrap {
   padding: 20px;
@@ -11076,12 +11112,17 @@ header a {
   color: #ffffff;
 }
 .wrapper .book_section img {
-  width: auto;
+  width: 55%;
 }
 @media screen and (max-width: 767px) {
   .wrapper .book_section img {
     width: 100%;
   }
+}
+.wrapper .book_section p span {
+  font-family: "poppinsbold", sans-serif;
+  font-weight: 700;
+  color: #ed1b2e;
 }
 .wrapper .daily_thoughts {
   padding: 40px 0;
