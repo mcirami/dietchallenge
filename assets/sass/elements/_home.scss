@@ -2,7 +2,25 @@ header	{
 	background: $white;
 
 	a {
-		display: block;
+		line-height: 1;
+
+		&.black {
+			padding: 4px 8px 3px;
+			background: $black;
+			color: $white;
+			border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+		}
+	}
+
+	h2 {
+		color: #442568;
+		font-size: 30px;
+	}
+
+	h3 {
+		@include poppinsmedium;
 	}
 }
 
@@ -94,6 +112,10 @@ header	{
 				top: -12px;
 				margin-left: -9%;
 				width: 92px;
+			}
+
+			@include media($smallMobile) {
+				width: 80px;
 			}
 		}
 
@@ -204,6 +226,14 @@ header	{
 		color: $white;
 		padding: 40px 0;
 
+		@include media($tablet) {
+			padding: 60px 0 40px;
+		}
+
+		@include media($mobile) {
+			padding: 20px 0;
+		}
+
 		#emailError {
 			@include opensanssemibold;
 			font-size: 14px;
@@ -261,11 +291,11 @@ header	{
 		h4 {
 			@include poppinsbold;
 			font-size: 14px;
-			color: $red;
+			color: $gray;
 
 			span {
 				@include poppinsextrabold;
-				color: $black;
+				color: $red;
 			}
 		}
 
@@ -276,9 +306,9 @@ header	{
 				color: $purple;
 			}
 
-			&.red {
+			&.yellow {
 				@include poppinsbold;
-				color: $red;
+				color: $yellow;
 			}
 		}
 
@@ -334,6 +364,58 @@ header	{
 				border: none;
 			}
 		}
+
+		.confirmation {
+			//min-height: 550px;
+			border: 1px solid $purple;
+			padding: 40px;
+			border-radius: 6px;
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+
+			@include media($tablet) {
+				padding: 20px;
+			}
+
+			h3 {
+				font-size: 28px;
+				line-height: 1.4;
+
+				@include media($tablet) {
+					font-size: 22px;
+				}
+			}
+
+			p {
+				color: $purple;
+				font-size: 20px;
+
+				@include media($tablet) {
+					font-size: 16px;
+				}
+
+				span {
+					color: $lightPurple;
+				}
+			}
+
+			h4 {
+				color: $yellow;
+
+				@include media($tablet) {
+					font-size: 12px;
+				}
+			}
+
+			h5 {
+				font-size: 20px;
+				color: $white;
+
+				@include media($tablet) {
+					font-size: 16px;
+				}
+			}
+		}
 	}
 
 	.success_stories {
@@ -374,6 +456,18 @@ header	{
 				color: $red;
 			}
 		}
+
+		a {
+			width: 50%;
+
+			@include media($tablet) {
+				width: 70%;
+			}
+
+			@include media($mobile) {
+				width: 50%;
+			}
+		}
 	}
 
 	.daily_thoughts {
@@ -396,7 +490,7 @@ header	{
 				content: '';
 				background: url('../images/quotes.png') no-repeat;
 				position: absolute;
-				left: -34px;
+				left: -55px;
 				top: 0;
 				width: 45px;
 				height: 40px;
@@ -410,6 +504,7 @@ header	{
 		}
 	}
 }
+
 
 footer {
 	background: $black;
