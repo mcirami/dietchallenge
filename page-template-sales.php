@@ -163,6 +163,8 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 									</div>
 								</div>
 
+								<?php echo do_shortcode('[bws_google_captcha]'); ?>
+
 								<script>
 
 									paypal.Buttons({
@@ -211,9 +213,9 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 
 												let paymentType = document.getElementById("payment_type");
 
-												console.log(details.status + " " + details.payer.name.given_name);
 												if(details.status === "COMPLETED") {
 													paymentType.value = "paypaltype";
+													grecaptcha.execute();
 													document.getElementById("myForm").submit();
 												}
 
@@ -324,7 +326,7 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 		</section><!-- book_section -->
 
 	<?php $weeklyTalk = get_field('weekly_talk_section');
-		if ($weeklyTalk && $weeklyTalk['video'] !== "" && $weeklyTalk['quote'] !== "") :
+		if ($weeklyTalk) :
 	?>
 			<section class="daily_thoughts text-center">
 				<div class="container">
@@ -333,23 +335,28 @@ $paymentType = (isset($_GET['paymentType']) ? $_GET['paymentType'] : "");
 							<h2 class="mb-4">Weekly Buddy Talk</h2>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-10 col-md-8 col-lg-6 mx-auto">
-							<!--<img src="<?php /*echo bloginfo( 'template_url' ); */?>/images/video-placeholer-success.jpg"/>-->
-							<?php echo $weeklyTalk['video'];?>
+					<?php if($weeklyTalk['video']) : ?>
+						<div class="row">
+							<div class="col-10 col-md-8 col-lg-6 mx-auto">
+								<!--<img src="<?php /*echo bloginfo( 'template_url' ); */?>/images/video-placeholer-success.jpg"/>-->
+								<?php echo $weeklyTalk['video'];?>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-9 col-md-6 mx-auto">
-							<h3 class="mt-5 d-inline-block">
-								<?php echo $weeklyTalk['quote'];?>
-							</h3>
+					<?php endif; ?>
+					<?php if($weeklyTalk['quote']) : ?>
+						<div class="row">
+							<div class="col-9 col-md-6 mx-auto">
+								<h3 class="mt-5 d-inline-block">
+									<?php echo $weeklyTalk['quote'];?>
+								</h3>
+							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 				</div>
 			</section><!--weekly talk section -->
 
 		<?php endif; ?>
+
 
 </main>
 

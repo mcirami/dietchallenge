@@ -490,15 +490,16 @@ header	{
 				content: '';
 				background: url('../images/quotes.png') no-repeat;
 				position: absolute;
-				left: -55px;
+				left: -12px;
 				top: 0;
 				width: 45px;
 				height: 40px;
 				background-size: 100%;
 
 				@include media($mobile) {
-					width: 40px;
-					height: 35px;
+					width: 25px;
+					height: 30px;
+					left:-28px;
 				}
 			}
 		}
@@ -509,8 +510,15 @@ header	{
 footer {
 	background: $black;
 	color: $white;
-	margin-top: 60px;
 	padding: 40px 0;
 	line-height: 1.4;
 	font-size: 12px;
+
+	a {
+		color: $white;
+
+		&:hover {
+			color: $gray;
+		}
+	}
 }

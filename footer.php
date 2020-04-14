@@ -12,6 +12,9 @@
 						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
 					</p>
 					<!-- /copyright -->
+					<p>
+						Designed By <a target="_blank" class="text-decoration-underline" href="https://mscwebservices.net">MSC Web Services, LLC</a>
+					</p>
 
 				</div>
 
@@ -32,6 +35,7 @@
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
 		</script>
+
 
 	</body>
 </html>

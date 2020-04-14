@@ -478,9 +478,17 @@ function prefix_send_email_to_admin() {
 
 	wp_insert_post($postArray);
 
-	$to      = 'matteo@mscwebservices.net';
+	$url = site_url();
+
+	if (strpos($url,'test') !== false) {
+		$mailTo = "matteo@mscwebservices.net";
+	} else {
+		$mailTo = 'tbswlc50@gmail.com';
+	}
+
+	$to      = $mailTo;
 	$subject = "You have a new submission";
-	$body = "Name: " . $name . "</br></br>" . "Email: " . $email;
+	$body = "Name: " . $name . " <br><br>" . "Email: " . $email;
 	$headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . $email);
 
 	if ( wp_mail( $to, $subject, $body, $headers ) ) {

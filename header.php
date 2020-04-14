@@ -12,8 +12,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
+
+
 		<!--<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>-->
+
 		<script src="https://www.paypal.com/sdk/js?client-id=AY8hS778F2utYNwR5yVu1ozkxMWD9ooxBPFt7L_1zXiiYE7Ooof250bRNa4h6-Mun5whjrn3M4sdfSWw&currency=USD" data-sdk-integration-source="button-factory"></script>
+
 
 		<?php wp_head(); ?>
 		<script>
